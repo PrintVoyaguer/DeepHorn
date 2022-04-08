@@ -8,7 +8,7 @@ url = 'https://store.steampowered.com'
 	#Check Data import data from url to soup
 def Check_Data(url):
 	http_page = requests.get(url)
-	soup = BeautifulSoup(http_page.text,features="html5lib")
+	soup = BeautifulSoup(http_page.text, 'lxml')
 	return (soup)
 
 	#Use htmlPage to html file
