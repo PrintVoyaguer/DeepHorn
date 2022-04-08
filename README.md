@@ -1,2 +1,2 @@
 # DeepHorn
- Ia check some sus image
+Une ia pour voir vos image SUS (enfin que sur les demandes :)
