@@ -5,8 +5,17 @@ with open('outputDiv.html', 'r', encoding="utf8") as f:
 	soup = BeautifulSoup(contents, features="html5lib")
 
 def check_class(soup):
-	class_Soup = soup.div['class']
-	return (class_Soup)
+	
+	class_Soup = set()
+
+	tags = {tag.name for tag in soup.find_all()}
+
+	for tag in tags:
+		for i in soup.find_all( tag ):
+			if i.has_attr( "class" ):
+				if len( i['class'] ) != 0:
+					class_Soup.add(" ".join( i['class']))
+	return class_Soup
 
 def In_File_Div(class_Soup):
 	with open("outputDiv.txt", "w", encoding='utf-8') as file:
